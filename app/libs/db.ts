@@ -10,4 +10,3 @@ export default async function dbconnect() {
     .connect(db)
     .then(() => console.log("DATABASE CONNECTED ✅✅✅"));
 }
-let IssueModel=mongoose.model.issue || mongoose.model()
