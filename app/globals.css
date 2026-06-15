@@ -1,2 +1,7 @@
-@import "tailwindcss" ;
-@import "@radix-ui/themes/styles.css";
+@import "tailwindcss";
+@plugin "daisyui"{
+   themes: light --default;
+ }
+ body{
+  overflow-x:hidden;
+ }

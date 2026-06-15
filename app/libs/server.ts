@@ -1,34 +1,35 @@
 "use server";
 
-import z from "zod";
 import dbconnect from "./db";
-import IssueModel from "./issue.model";
+import PageModel from "./page.model";
 
-const issueschema = z.object({
-  title: z.string().min(1).max(112),
-  description: z.string().min(1),
-});
-interface Idata{
-  title:string,
-  description:string
+interface Idata {
+  title: string;
+  url: string;
 }
-export async function createIssue(data: Idata) {
+
+export async function CreateLinks(data: Idata) {
   await dbconnect();
-  const valid = issueschema.safeParse(data);
-  if (!valid.success) {
-    return valid.error;
-  }
   try {
-    const newdata = await IssueModel.create({
-      title: data.title,
-      description: data.description,
+    console.log(data);
+    await PageModel.create({
+      links: [
+        {
+          title: data.title,
+          url: data.url,
+        },
+      ],
     });
     return {
-      message: "object created",
+      message: "Links Created",
       status: 201,
-      Data: JSON.stringify(newdata),
     };
-  } catch (error) {
-    return error;
-  }
+  } catch (error) {}
+}
+
+export async function getAllLinks() {
+  await dbconnect();
+  const data = await PageModel.findById({_id:"6a2fd888d4fa7f71acd1e469"});
+  return data;
+
 }
