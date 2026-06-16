@@ -1,17 +1,13 @@
 "use client"
 import LinkTreeUI from "@/app/components/linkshow"
-import { CreateLinks, getAllLinks } from "@/app/libs/server"
+import { CreateLinks, getAllLinks } from "@/app/libs/server.action"
 import { useForm } from "react-hook-form"
 
-interface Idata {
-    title: string,
-    url: string
-}
 
 const FormComp = () => {
 
 
-    const { register, handleSubmit } = useForm<Idata>()
+    const { register, handleSubmit } = useForm()
 
     return (
         <>
@@ -24,6 +20,7 @@ const FormComp = () => {
                     <input type="text" {...register("title")} className="input" placeholder="Type here" />
                     <legend className="fieldset-legend">URL</legend>
                     <input type="text" className="input" {...register("url")} placeholder="Type here" />
+                    <input type="text" className="input" {...register("bio")} placeholder="Bio" />
                     <button className="btn w-30">Create</button>
                 </form>
 

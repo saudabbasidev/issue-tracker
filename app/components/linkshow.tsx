@@ -1,4 +1,4 @@
-import { getAllLinks } from "../libs/server";
+import { getAllLinks } from "../libs/server.action";
 import Linkbar from "./link";
 
 export default async function LinkTreeUI() {
@@ -28,7 +28,7 @@ export default async function LinkTreeUI() {
         {/* <Linkbar links={alldata} /> */}
         <p className="text-white">
 
-        {JSON.stringify(alldata._id)}
+        {JSON.stringify(alldata?._id)}
         </p>
 
         {/* Footer */}

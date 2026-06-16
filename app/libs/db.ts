@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 export default async function dbconnect() {
   const db = process.env.DBURI as string;
