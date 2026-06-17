@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "bcrpyt": "^2.0.0",
+    "bcryptjs": "^3.0.3",
     "daisyui": "^5.5.23",
     "lucide-react": "^1.18.0",
     "mongoose": "^9.7.0",

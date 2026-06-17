@@ -3,9 +3,9 @@ import mongoose from "mongoose";
 const Pageschema = mongoose.Schema.create(
   {
     authorId: { type: String },
-    name: {
+    username: {
       type: String,
-      default: "",
+      unique: true,
     },
     bio: {
       type: String,

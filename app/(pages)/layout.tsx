@@ -1,9 +1,10 @@
-import React from 'react'
 
-const layout = ({ children }: any) => {
+
+const layout = async ({ children }: any) => {
+
     return (
         <>
-
+            
             {children}
         </>
     )
