@@ -3,11 +3,12 @@ import { auth } from "@/app/auth"
 import DialongBox from "@/app/components/dialong"
 import FormComp from "@/app/components/form"
 import LinkTreeUI from "@/app/components/linkshow"
-import { Onboard } from "@/app/libs/server.action"
+import { GetUserDetails, Onboard } from "@/app/libs/server.action"
 import { redirect } from "next/navigation"
 const page = async () => {
   const session = await auth()
   if (!session?.user) redirect('/login')
+  
 
   const user = await Onboard()
   return (

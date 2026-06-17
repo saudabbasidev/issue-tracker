@@ -13,7 +13,7 @@ const DialongBox = () => {
         <>
             {/* You can open the modal using document.getElementById('ID').showModal() method */}
             {/* The button to open modal */}
-            <label htmlFor="my_modal_6" className="btn">open modal</label>
+            {/* <label htmlFor="my_modal_6" className="btn">open modal</label> */}
 
             {/* Put this part before </body> tag */}
             <input defaultChecked type="checkbox" id="my_modal_6" className="modal-toggle" />
@@ -26,7 +26,7 @@ const DialongBox = () => {
                         )
                     })}>
 
-                        <input type="text" className="input h-8 w-full" placeholder="Username" {...register("username")} />
+                        <input type="text"  className="input h-8 w-full" placeholder="Username" {...register("username")} />
                         <button className="btn bg-black text-white">Submit</button>
                     </form>
                     <div className="modal-action">

@@ -1,12 +1,14 @@
 import { json } from "stream/consumers";
 import { auth } from "../auth";
-import { getAllLinks } from "../libs/server.action";
+import { getAllLinks, GetUserDetails } from "../libs/server.action";
+import Linkbar from "./link";
 
 
 export default async function LinkTreeUI() {
 
   const alldata: any = await getAllLinks();
   const session = await auth()
+  const userdata=await GetUserDetails()
 
 
   return (
@@ -19,21 +21,21 @@ export default async function LinkTreeUI() {
 
           <div>
             <h1 className="text-xl font-semibold text-white">
-              Your Name
+              @{userdata?.username}
             </h1>
             <p className="text-sm text-zinc-400">
-              Your bio goes here
+              {userdata?.bio}
             </p>
           </div>
         </div>
 
         {/* Links Section */}
 
-        {/* <Linkbar links={alldata} /> */}
+        <Linkbar links={alldata} />
         <p className="text-white">
 
-          {/* {JSON.stringify(alldata?._id)} */}
-          {JSON.stringify(session)}
+    {/* {JSON.stringify(alldata)} */}
+        
         </p>
 
         {/* Footer */}

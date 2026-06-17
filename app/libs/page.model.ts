@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const Pageschema = mongoose.Schema.create(
   {
-    authorId: { type: String },
+    authorId: { type: String ,unique:true},
     username: {
       type: String,
       unique: true,
